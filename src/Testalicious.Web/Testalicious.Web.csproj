@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <LangVersion>preview</LangVersion>
+    <RuntimeIdentifiers>win10-x86</RuntimeIdentifiers>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LetterAvatars.AspNetCore" Version="1.0.2" />
+    <PackageReference Include="RobotsTxtCore" Version="1.1.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="ClientApp/**" />
+    <Content Include="ClientApp/**">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Resources/**/*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources/**/*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Testalicious.Core\Testalicious.Core.csproj" />
+  </ItemGroup>
+</Project>
