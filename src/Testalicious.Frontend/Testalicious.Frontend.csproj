@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- This file serves no purpose except to hide some folders from Visual Studio -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <SpaRoot></SpaRoot>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="$(SpaRoot)**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**;$(SpaRoot)dist\**;$(SpaRoot)tmp\**;$(SpaRoot)obj\**;$(SpaRoot)bin\**" />
+  </ItemGroup>
+</Project>
